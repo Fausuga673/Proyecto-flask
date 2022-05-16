@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/form.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/tabla.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/main.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/cabecera.css')}}">
+    <script src="https://kit.fontawesome.com/a7ae13901f.js" crossorigin="anonymous"></script>
+    
+</head>
+<body>
+
+  <header class="cabecera">
+    <h2 class="logo"><a href="/">Biblioteca</a></h2>
+    <form class="busqueda" action="search" post="GET" action="">
+      <input type="text" placeholder="Buscar libro" class="busqueda--input" name="search" value="{{ request.form.search}}">
+      <button class="busqueda--boton" value="search">
+        <i class="fa-solid fa-magnifying-glass" class="busqueda__lupa--i"></i>
+      </button>
+    </form>
+  </header>
+  <div class="contenedor">
+    {% with messages = get_flashed_messages()  %}
+    {% if messages %}
+    {% for message in messages %}
+      <p class="mensaje__contenedor">{{ message }}</p>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+    <form action="{{url_for('add_libro')}}" method="POST" class="formulario">
+      <h2 class="formulario--h2">Registrar libro</h2>
+      <input type="text" name="titulo" placeholder="Titulo" class="formulario--input">
+      <input type="text" name="autor" placeholder="Autor" class="formulario--input">
+      <input type="text" name="categoria" placeholder="Categoria" class="formulario--input">
+      <input type="text" name="precio" placeholder="Precio" class="formulario--input">
+      <button class="formulario--boton" value="add_libro" name="update"><h2>Registrar</h2></button>
+    </form>
+    <table class="tabla__libro">
+      <thead>
+        <tr>
+          <th>Titulo</th>
+          <th>Autor</th>
+          <th>Categoria</th>
+          <th>Precio</th>
+          <th>Operaciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for libro in libro %}
+        <tr>
+          <td>{{libro.1}}</td>
+          <td>{{libro.2}}</td>
+          <td>{{libro.3}}</td>
+          <td>${{libro.4}}</td>
+          <td>
+            <a href="/edit/{{libro.0}}" class="yellow"><i class="fa-solid fa-pen-to-square"></i></a>
+            <a href="/delete/{{libro.0}}" class="red"><i class="fa-solid fa-circle-minus"></i></a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>

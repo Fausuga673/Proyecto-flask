@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/form.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/tabla.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/main.css')}}">
+</head>
+<body>
+    <div class="contenedor">
+        <form action="/update/{{libro.0}}" method="POST" class="formulario">
+            <h2 class="formulario--h2">Editar libro</h2>
+            <input type="text" name="titulo" value="{{libro.1}}" placeholder="Titulo" class="formulario--input">
+            <input type="text" name="autor" value="{{libro.2}}" placeholder="Autor" class="formulario--input">
+            <input type="text" name="categoria" value="{{libro.3}}" placeholder="Categoria" class="formulario--input">
+            <input type="text" name="precio" value="{{libro.4}}" placeholder="Precio" class="formulario--input">
+            <button class="formulario--boton"><h2>Guardar</h2></button>
+        </form>
+    </div>
+</body>
+</html>

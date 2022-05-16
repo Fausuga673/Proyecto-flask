@@ -1,0 +1,46 @@
+.cabecera {
+    background: var(--color-azul);
+    padding: 1vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logo a{
+    letter-spacing: 2px;
+    font-size:calc(12px + 1.5vw);
+    color: var(--color-blanco);
+    text-decoration: none;
+}
+
+.busqueda {
+    display: flex;
+}
+
+.busqueda--input {
+    width: 25vw;
+    padding: .9vw;
+    border-top-left-radius: calc(2px + .1vw);
+    border-bottom-left-radius: calc(2px + .1vw);
+    border-style: none;
+    outline: none;
+    font-size: calc(4px + .8vw);
+    background: var(--color-blanco);
+    color: var(--color-gris-oscuro);
+}
+
+.busqueda--boton {
+    width: 3vw;
+    padding: .9vw;
+    border-top-right-radius: calc(2px + .1vw);
+    border-bottom-right-radius: calc(2px + .1vw);
+    border-style: none;
+    font-size: calc(4px + .8vw);
+    background: var(--color-gris-oscuro);
+    color: var(--color-blanco);
+}
+
+.busqueda--lupa {
+    background: var(--color-gris);
+    padding: 20px;
+}

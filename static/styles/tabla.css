@@ -1,0 +1,59 @@
+.tabla__libro {
+    width: 50vw;
+    margin: 50px auto;
+    border-collapse: collapse;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .5);
+    box-sizing: content-box;
+}
+
+.tabla__libro thead {
+    background: var(--background-gris);
+}
+
+
+.tabla__libro thead th {
+    text-align: left;
+    font-size: calc(4px + .7vw);
+    color: var(--color-gris-oscuro);
+}
+
+.tabla__libro thead tr {
+    border-radius: 20px;
+}
+
+.tabla__libro tbody tr {
+    padding: 1vw;
+    background: var(--color-blanco);
+}
+
+.tabla__libro tbody td:last-child {
+    display: flex;
+}
+
+.tabla__libro th, .tabla__libro td {
+    padding: 1vw;
+    font-size: calc(4px + .7vw);
+}
+
+.tabla__libro tbody tr:nth-child(even) {
+    background: var(--background-gris);
+}
+
+
+.tabla__libro a {
+    text-decoration: none;
+    color: var(--color-blanco);
+    padding: .5vw;
+    margin-right: 8px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .2);
+
+}
+
+.tabla__libro .yellow {
+    background: hsl(38, 100%, 54%);
+}
+
+.tabla__libro .red {
+    background: #ff1346;
+}
